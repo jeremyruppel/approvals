@@ -106,6 +106,9 @@ For an example who's full description is `My Spec`:
 
 When you rerun the approval, it should now pass.
 
+You can also approve specs by using the `approvals verify` command. Run
+`approvals help verify` to see all configurable options.
+
 ### Expensive computations
 
 The Executable class allows you to perform expensive operations only when the command to execute it changes.
