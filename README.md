@@ -137,4 +137,15 @@ There is a convenience wrapper for RSpec that looks like so:
       end
     end
 
+### Autotest integration
+
+Since approvals are actual files, autotest will run continuously on a failed approval. You can fix this by
+adding an exception to your `.autotest` file, like:
+
+		Autotest.add_hook :initialize do |autotest|
+			%w| .approvals .git coverage log spec/fixtures/approvals |.each do |exception|
+				autotest.add_exception exception
+			end
+		end
+
 Copyright (c) 2011 Katrina Owen, released under the MIT license
